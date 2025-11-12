@@ -184,7 +184,7 @@ print("Key: ", key.decode())
 
 HOST = '127.0.0.1'
 PORT = 5924
-server_socket = socket.socket()
+server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server_socket.bind((HOST, PORT))
 server_socket.listen()
 
@@ -219,7 +219,7 @@ cipher = Fernet(key)
 
 HOST = '127.0.0.1'
 PORT = 5924
-client_socket = socket.socket()
+client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client_socket.connect((HOST, PORT))
 print(f"Connected to server at {HOST}:{PORT}\n")
 
